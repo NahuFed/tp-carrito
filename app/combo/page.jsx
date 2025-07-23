@@ -27,7 +27,7 @@ const ComboPage = () => {
           className={`${styles.tabButton} ${vistaActual === 'hamburguesas' ? styles.active : ''}`}
           onClick={() => setVistaActual('hamburguesas')}
         >
-          🍔 Hamburguesas Clásicas
+          🍔 🌭🥪 Hamburguesas Clásicas, sandwiches o hot-dogs
         </button>
         <button 
           className={`${styles.tabButton} ${vistaActual === 'personalizada' ? styles.active : ''}`}

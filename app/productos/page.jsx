@@ -81,14 +81,12 @@ const Productos = () => {
       </div>
 
       {/* Grid de productos */}
-      <div className={styles.productsGrid}>
+      <div className={styles.productGrid}>
         {productosFiltrados.map(producto => (
           <div key={producto._id} className={styles.productCard}>
-            <div className={styles.productImage}>
-              {/* Landing page sin imagen */}
-              <div className={styles.productImagePlaceholder}>
-                🍔
-              </div>
+            <div >
+                <img className={styles.productImage} src={producto.imagen}>
+                </img>
             </div>
             
             <div className={styles.productInfo}>

@@ -1,7 +1,9 @@
 .nav {
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+  backdrop-filter: blur(10px);
+  
 }
 
 .nav ul {
@@ -11,6 +13,9 @@
   padding: 0;
   margin: 0;
   align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav li {
@@ -19,14 +24,53 @@
 
 .nav a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
   transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
 }
 
 .nav a:hover {
-  background-color: #f5f5f5;
-  color: #007bff;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.nav a:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem;
+  }
+  
+  .nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav a {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+.divisor::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #ff9900;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
 }

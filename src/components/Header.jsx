@@ -17,6 +17,7 @@ const Header = () => {
                 <Link href="/combo">Arma tu combo</Link>
             </li>
         </ul>
+    <span className={styles.divisor}></span>
     </nav>
     </header>
 

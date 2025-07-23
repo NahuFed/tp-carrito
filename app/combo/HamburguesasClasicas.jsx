@@ -17,8 +17,8 @@ const HamburguesasClasicas = ({ onAgregarAlCarrito }) => {
       setLoading(true)
       const response = await axios.get('/api/productos')
       
-      // Filtrar solo hamburguesas
-      const hamburguesas = response.data.filter(producto => producto.categoria === 'hamburguesas')
+      // Filtrar solo hamburguesas hot dogs y sandwiches
+      const hamburguesas = response.data.filter(producto => producto.categoria === 'hamburguesas' || producto.categoria === 'hot-dogs' || producto.categoria === 'sandwiches')
       setProductos(hamburguesas)
       setError(null)
     } catch (error) {
