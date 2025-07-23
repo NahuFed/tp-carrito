@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from './HamburguesaPersonalizada.module.css'
 
 const HamburguesaPersonalizada = ({ onAgregarAlCarrito }) => {
@@ -45,14 +46,9 @@ const HamburguesaPersonalizada = ({ onAgregarAlCarrito }) => {
   const cargarIngredientes = async () => {
     try {
       setLoading(true)
-      const response = await fetch('/api/ingredientes')
+      const response = await axios.get('/api/ingredientes')
       
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}: ${response.statusText}`)
-      }
-      
-      const ingredientesData = await response.json()
-      setIngredientes(ingredientesData)
+      setIngredientes(response.data)
       setError(null)
     } catch (error) {
       console.error('Error al cargar ingredientes:', error)

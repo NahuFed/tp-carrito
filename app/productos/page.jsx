@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from './Productos.module.css'
 
 const Productos = () => {
@@ -21,14 +22,9 @@ const Productos = () => {
     const cargarProductos = async () => {
       try {
         setLoading(true)
-        const response = await fetch('/api/productos')
+        const response = await axios.get('/api/productos')
         
-        if (!response.ok) {
-          throw new Error(`Error ${response.status}: ${response.statusText}`)
-        }
-        
-        const productosData = await response.json()
-        setProductos(productosData)
+        setProductos(response.data)
         setError(null)
       } catch (error) {
         console.error('Error al cargar productos:', error)

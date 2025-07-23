@@ -26,13 +26,7 @@ const pedidoSchema = new mongoose.Schema({
     },
     producto_nombre: { type: String, required: true },
     
-    // Para hamburguesas personalizadas
-    hamburguesa_base: {
-      nombre: { type: String },
-      precio_base: { type: Number },
-      calorias_base: { type: Number }
-    },
-    
+    // Para hamburguesas personalizadas - solo ingredientes
     ingredientes_personalizados: [{
       ingrediente_id: { 
         type: mongoose.Schema.Types.ObjectId, 

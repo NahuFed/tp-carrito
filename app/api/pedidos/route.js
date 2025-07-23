@@ -82,66 +82,64 @@ export async function POST(req) {
 
             // Validar hamburguesa personalizada
             if (item.tipo === 'hamburguesa_personalizada') {
-                if (!item.hamburguesa_base || !item.hamburguesa_base.nombre) {
+                if (!item.ingredientes_personalizados || item.ingredientes_personalizados.length === 0) {
                     return NextResponse.json(
-                        { error: "hamburguesa_base es obligatoria para hamburguesas personalizadas" }, 
+                        { error: "Las hamburguesas personalizadas deben tener al menos un ingrediente" }, 
                         { status: 400 }
                     )
                 }
                 
-                let precioTotal = item.hamburguesa_base.precio_base || 0
-                let caloriasTotal = item.hamburguesa_base.calorias_base || 0
+                let precioTotal = 0
+                let caloriasTotal = 0
                 
                 // Validar ingredientes personalizados - SOLO ingredientes existentes en BD
-                if (item.ingredientes_personalizados && item.ingredientes_personalizados.length > 0) {
-                    const ingredientesValidados = []
-                    
-                    for (const ing of item.ingredientes_personalizados) {
-                        // OBLIGATORIO: debe tener ingrediente_id
-                        if (!ing.ingrediente_id) {
-                            return NextResponse.json(
-                                { error: "Todos los ingredientes deben tener un ingrediente_id válido" }, 
-                                { status: 400 }
-                            )
-                        }
-                        
-                        const ingrediente = await Ingrediente.findById(ing.ingrediente_id)
-                        if (!ingrediente) {
-                            return NextResponse.json(
-                                { error: `Ingrediente con ID ${ing.ingrediente_id} no encontrado` }, 
-                                { status: 404 }
-                            )
-                        }
-                        
-                        // Verificar que el ingrediente esté disponible
-                        if (!ingrediente.disponible) {
-                            return NextResponse.json(
-                                { error: `Ingrediente "${ingrediente.nombre}" no está disponible` }, 
-                                { status: 400 }
-                            )
-                        }
-                        
-                        const cantidad = ing.cantidad || 1
-                        const precioIngrediente = ingrediente.precio * cantidad
-                        const caloriasIngrediente = ingrediente.calorias * cantidad
-                        
-                        precioTotal += precioIngrediente
-                        caloriasTotal += caloriasIngrediente
-                        
-                        // Guardar datos del ingrediente para el histórico
-                        ingredientesValidados.push({
-                            ingrediente_id: ingrediente._id,
-                            ingrediente_nombre: ingrediente.nombre,
-                            precio_adicional: ingrediente.precio,
-                            cantidad: cantidad
-                        })
+                const ingredientesValidados = []
+                
+                for (const ing of item.ingredientes_personalizados) {
+                    // OBLIGATORIO: debe tener ingrediente_id
+                    if (!ing.ingrediente_id) {
+                        return NextResponse.json(
+                            { error: "Todos los ingredientes deben tener un ingrediente_id válido" }, 
+                            { status: 400 }
+                        )
                     }
                     
-                    // Actualizar el item con los ingredientes validados
-                    itemValidado.ingredientes_personalizados = ingredientesValidados
+                    const ingrediente = await Ingrediente.findById(ing.ingrediente_id)
+                    if (!ingrediente) {
+                        return NextResponse.json(
+                            { error: `Ingrediente con ID ${ing.ingrediente_id} no encontrado` }, 
+                            { status: 404 }
+                        )
+                    }
+                    
+                    // Verificar que el ingrediente esté disponible
+                    if (!ingrediente.disponible) {
+                        return NextResponse.json(
+                            { error: `Ingrediente "${ingrediente.nombre}" no está disponible` }, 
+                            { status: 400 }
+                        )
+                    }
+                    
+                    const cantidad = ing.cantidad || 1
+                    const precioIngrediente = ingrediente.precio * cantidad
+                    const caloriasIngrediente = ingrediente.calorias * cantidad
+                    
+                    precioTotal += precioIngrediente
+                    caloriasTotal += caloriasIngrediente
+                    
+                    // Guardar datos del ingrediente para el histórico
+                    ingredientesValidados.push({
+                        ingrediente_id: ingrediente._id,
+                        ingrediente_nombre: ingrediente.nombre,
+                        precio_adicional: ingrediente.precio,
+                        cantidad: cantidad
+                    })
                 }
                 
-                itemValidado.producto_nombre = `${item.hamburguesa_base.nombre} (Personalizada)`
+                // Actualizar el item con los ingredientes validados
+                itemValidado.ingredientes_personalizados = ingredientesValidados
+                
+                itemValidado.producto_nombre = item.producto_nombre || "Hamburguesa Personalizada"
                 itemValidado.precio_unitario = precioTotal
                 itemValidado.calorias_unitarias = caloriasTotal
             }

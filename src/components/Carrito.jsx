@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import axios from 'axios'
 import { useCarrito } from '@/src/store/hooks'
 import styles from './Carrito.module.css'
 
@@ -39,11 +40,7 @@ const Carrito = () => {
         
         return {
           tipo: 'hamburguesa_personalizada',
-          hamburguesa_base: {
-            nombre: item.nombre || 'Hamburguesa Personalizada',
-            precio_base: 0, // El precio ya está calculado en el total
-            calorias_base: 0 // Las calorías ya están calculadas en el total
-          },
+          producto_nombre: item.nombre || 'Hamburguesa Personalizada',
           ingredientes_personalizados: ingredientesConId,
           cantidad: item.cantidad,
           subtotal: item.precio * item.cantidad,
@@ -72,25 +69,14 @@ const Carrito = () => {
     }
 
     try {
-      const response = await fetch('/api/pedidos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(pedido),
-      })
-
-      if (response.ok) {
-        const resultado = await response.json()
-        alert(`¡Pedido confirmado! Número: ${resultado.pedido.numero_pedido}`)
-        limpiarCarrito()
-      } else {
-        const error = await response.json()
-        alert(`Error al confirmar pedido: ${error.error}`)
-      }
+      const response = await axios.post('/api/pedidos', pedido)
+      
+      alert(`¡Pedido confirmado! Número: ${response.data.pedido.numero_pedido}`)
+      limpiarCarrito()
     } catch (error) {
       console.error('Error:', error)
-      alert('Error al confirmar el pedido')
+      const errorMessage = error.response?.data?.error || 'Error al confirmar el pedido'
+      alert(`Error al confirmar pedido: ${errorMessage}`)
     }
   }
 

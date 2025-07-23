@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from './ProductoCombo.module.css'
 
 const AcompañamientosPostres = ({ onAgregarAlCarrito }) => {
@@ -14,15 +15,10 @@ const AcompañamientosPostres = ({ onAgregarAlCarrito }) => {
   const cargarProductos = async () => {
     try {
       setLoading(true)
-      const response = await fetch('/api/productos')
+      const response = await axios.get('/api/productos')
       
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}: ${response.statusText}`)
-      }
-      
-      const data = await response.json()
       // Filtrar acompañamientos y postres
-      const acompañamientosPostres = data.filter(producto => 
+      const acompañamientosPostres = response.data.filter(producto => 
         producto.categoria === 'acompañamientos' || 
         producto.categoria === 'postres' ||
         producto.categoria === 'guarniciones'

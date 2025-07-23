@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from './ProductoCombo.module.css'
 
 const HamburguesasClasicas = ({ onAgregarAlCarrito }) => {
@@ -14,15 +15,10 @@ const HamburguesasClasicas = ({ onAgregarAlCarrito }) => {
   const cargarHamburguesas = async () => {
     try {
       setLoading(true)
-      const response = await fetch('/api/productos')
+      const response = await axios.get('/api/productos')
       
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}: ${response.statusText}`)
-      }
-      
-      const data = await response.json()
       // Filtrar solo hamburguesas
-      const hamburguesas = data.filter(producto => producto.categoria === 'hamburguesas')
+      const hamburguesas = response.data.filter(producto => producto.categoria === 'hamburguesas')
       setProductos(hamburguesas)
       setError(null)
     } catch (error) {
