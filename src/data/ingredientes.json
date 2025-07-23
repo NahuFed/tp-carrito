@@ -1,0 +1,370 @@
+[
+  {
+    "nombre": "Medallón de Carne de Res",
+    "categoria": "proteinas",
+    "precio": 3500,
+    "calorias": 250,
+    "disponible": true,
+    "descripcion": "Medallón de carne de res 100% fresca, 150g"
+  },
+  {
+    "nombre": "Medallón de Pollo",
+    "categoria": "proteinas",
+    "precio": 3000,
+    "calorias": 180,
+    "disponible": true,
+    "descripcion": "Medallón de pechuga de pollo grillada, 120g"
+  },
+  {
+    "nombre": "Medallón Vegano",
+    "categoria": "proteinas",
+    "precio": 3800,
+    "calorias": 200,
+    "disponible": true,
+    "descripcion": "Medallón a base de plantas con proteína de soja"
+  },
+  {
+    "nombre": "Doble Medallón de Carne",
+    "categoria": "proteinas",
+    "precio": 6500,
+    "calorias": 500,
+    "disponible": true,
+    "descripcion": "Dos medallones de carne de res, 300g total"
+  },
+  {
+    "nombre": "Pan Brioche",
+    "categoria": "panes",
+    "precio": 800,
+    "calorias": 150,
+    "disponible": true,
+    "descripcion": "Pan brioche artesanal con semillas de sésamo"
+  },
+  {
+    "nombre": "Pan Integral",
+    "categoria": "panes",
+    "precio": 700,
+    "calorias": 120,
+    "disponible": true,
+    "descripcion": "Pan integral multicereal"
+  },
+  {
+    "nombre": "Pan Sin Gluten",
+    "categoria": "panes",
+    "precio": 1200,
+    "calorias": 140,
+    "disponible": true,
+    "descripcion": "Pan libre de gluten para celíacos"
+  },
+  {
+    "nombre": "Queso Cheddar",
+    "categoria": "quesos",
+    "precio": 1000,
+    "calorias": 90,
+    "disponible": true,
+    "descripcion": "Queso cheddar madurado"
+  },
+  {
+    "nombre": "Queso Suizo",
+    "categoria": "quesos",
+    "precio": 1200,
+    "calorias": 85,
+    "disponible": true,
+    "descripcion": "Queso suizo con agujeros característicos"
+  },
+  {
+    "nombre": "Queso Azul",
+    "categoria": "quesos",
+    "precio": 1500,
+    "calorias": 100,
+    "disponible": true,
+    "descripcion": "Queso azul cremoso y fuerte"
+  },
+  {
+    "nombre": "Lechuga Iceberg",
+    "categoria": "vegetales",
+    "precio": 300,
+    "calorias": 5,
+    "disponible": true,
+    "descripcion": "Lechuga fresca y crujiente"
+  },
+  {
+    "nombre": "Tomate",
+    "categoria": "vegetales",
+    "precio": 400,
+    "calorias": 10,
+    "disponible": true,
+    "descripcion": "Rodajas de tomate fresco"
+  },
+  {
+    "nombre": "Cebolla Morada",
+    "categoria": "vegetales",
+    "precio": 250,
+    "calorias": 8,
+    "disponible": true,
+    "descripcion": "Aros de cebolla morada fresca"
+  },
+  {
+    "nombre": "Pepinillos",
+    "categoria": "vegetales",
+    "precio": 350,
+    "calorias": 3,
+    "disponible": true,
+    "descripcion": "Pepinillos encurtidos en vinagre"
+  },
+  {
+    "nombre": "Aguacate",
+    "categoria": "vegetales",
+    "precio": 1200,
+    "calorias": 80,
+    "disponible": true,
+    "descripcion": "Rodajas de aguacate fresco"
+  },
+  {
+    "nombre": "Champiñones",
+    "categoria": "vegetales",
+    "precio": 800,
+    "calorias": 15,
+    "disponible": true,
+    "descripcion": "Champiñones salteados con ajo"
+  },
+  {
+    "nombre": "Bacon",
+    "categoria": "extras",
+    "precio": 1500,
+    "calorias": 120,
+    "disponible": true,
+    "descripcion": "Tiras de bacon crujiente"
+  },
+  {
+    "nombre": "Huevo Frito",
+    "categoria": "extras",
+    "precio": 1000,
+    "calorias": 70,
+    "disponible": true,
+    "descripcion": "Huevo frito con yema líquida"
+  },
+  {
+    "nombre": "Aros de Cebolla",
+    "categoria": "extras",
+    "precio": 1800,
+    "calorias": 150,
+    "disponible": true,
+    "descripcion": "Aros de cebolla empanizados y fritos"
+  },
+  {
+    "nombre": "Salsa BBQ",
+    "categoria": "salsas",
+    "precio": 500,
+    "calorias": 25,
+    "disponible": true,
+    "descripcion": "Salsa barbacoa ahumada casera"
+  },
+  {
+    "nombre": "Mayonesa",
+    "categoria": "salsas",
+    "precio": 300,
+    "calorias": 90,
+    "disponible": true,
+    "descripcion": "Mayonesa casera cremosa"
+  },
+  {
+    "nombre": "Ketchup",
+    "categoria": "salsas",
+    "precio": 300,
+    "calorias": 20,
+    "disponible": true,
+    "descripcion": "Salsa ketchup de tomate natural"
+  },
+  {
+    "nombre": "Mostaza Dijon",
+    "categoria": "salsas",
+    "precio": 400,
+    "calorias": 15,
+    "disponible": true,
+    "descripcion": "Mostaza dijon gourmet"
+  },
+  {
+    "nombre": "Salsa Picante",
+    "categoria": "salsas",
+    "precio": 500,
+    "calorias": 10,
+    "disponible": true,
+    "descripcion": "Salsa picante con chiles jalapeños"
+  },
+  {
+    "nombre": "Pan Pretzel",
+    "categoria": "panes",
+    "precio": 1000,
+    "calorias": 180,
+    "disponible": true,
+    "descripcion": "Pan pretzel con sal gruesa"
+  },
+  {
+    "nombre": "Pan de Centeno",
+    "categoria": "panes",
+    "precio": 900,
+    "calorias": 130,
+    "disponible": true,
+    "descripcion": "Pan de centeno oscuro"
+  },
+  {
+    "nombre": "Queso Mozzarella",
+    "categoria": "quesos",
+    "precio": 1100,
+    "calorias": 80,
+    "disponible": true,
+    "descripcion": "Queso mozzarella fresco derretido"
+  },
+  {
+    "nombre": "Queso Americano",
+    "categoria": "quesos",
+    "precio": 900,
+    "calorias": 95,
+    "disponible": true,
+    "descripcion": "Queso americano procesado cremoso"
+  },
+  {
+    "nombre": "Queso de Cabra",
+    "categoria": "quesos",
+    "precio": 1800,
+    "calorias": 75,
+    "disponible": true,
+    "descripcion": "Queso de cabra suave y cremoso"
+  },
+  {
+    "nombre": "Rúcula",
+    "categoria": "vegetales",
+    "precio": 600,
+    "calorias": 8,
+    "disponible": true,
+    "descripcion": "Hojas de rúcula fresca picante"
+  },
+  {
+    "nombre": "Espinaca",
+    "categoria": "vegetales",
+    "precio": 500,
+    "calorias": 7,
+    "disponible": true,
+    "descripcion": "Hojas de espinaca baby fresca"
+  },
+  {
+    "nombre": "Pimientos Rojos",
+    "categoria": "vegetales",
+    "precio": 700,
+    "calorias": 12,
+    "disponible": true,
+    "descripcion": "Pimientos rojos asados"
+  },
+  {
+    "nombre": "Cebolla Caramelizada",
+    "categoria": "vegetales",
+    "precio": 800,
+    "calorias": 25,
+    "disponible": true,
+    "descripcion": "Cebolla caramelizada lentamente"
+  },
+  {
+    "nombre": "Jalapeños",
+    "categoria": "vegetales",
+    "precio": 400,
+    "calorias": 5,
+    "disponible": true,
+    "descripcion": "Rodajas de jalapeños encurtidos"
+  },
+  {
+    "nombre": "Medallón de Pescado",
+    "categoria": "proteinas",
+    "precio": 4200,
+    "calorias": 220,
+    "disponible": true,
+    "descripcion": "Medallón de pescado blanco empanizado"
+  },
+  {
+    "nombre": "Medallón de Cordero",
+    "categoria": "proteinas",
+    "precio": 5500,
+    "calorias": 280,
+    "disponible": true,
+    "descripcion": "Medallón de cordero con hierbas"
+  },
+  {
+    "nombre": "Portobello",
+    "categoria": "proteinas",
+    "precio": 3200,
+    "calorias": 35,
+    "disponible": true,
+    "descripcion": "Hongo portobello grande a la parrilla"
+  },
+  {
+    "nombre": "Chorizo",
+    "categoria": "extras",
+    "precio": 1800,
+    "calorias": 140,
+    "disponible": true,
+    "descripcion": "Chorizo español picante"
+  },
+  {
+    "nombre": "Jamón Serrano",
+    "categoria": "extras",
+    "precio": 2200,
+    "calorias": 90,
+    "disponible": true,
+    "descripcion": "Jamón serrano en lonchas finas"
+  },
+  {
+    "nombre": "Hash Browns",
+    "categoria": "extras",
+    "precio": 1600,
+    "calorias": 180,
+    "disponible": true,
+    "descripcion": "Papa rallada frita crujiente"
+  },
+  {
+    "nombre": "Nachos",
+    "categoria": "extras",
+    "precio": 1400,
+    "calorias": 160,
+    "disponible": true,
+    "descripcion": "Nachos crujientes con queso"
+  },
+  {
+    "nombre": "Salsa Ranch",
+    "categoria": "salsas",
+    "precio": 600,
+    "calorias": 80,
+    "disponible": true,
+    "descripcion": "Salsa ranch cremosa con hierbas"
+  },
+  {
+    "nombre": "Aioli de Ajo",
+    "categoria": "salsas",
+    "precio": 700,
+    "calorias": 85,
+    "disponible": true,
+    "descripcion": "Aioli casero con ajo asado"
+  },
+  {
+    "nombre": "Salsa Chipotle",
+    "categoria": "salsas",
+    "precio": 800,
+    "calorias": 30,
+    "disponible": true,
+    "descripcion": "Salsa chipotle ahumada y picante"
+  },
+  {
+    "nombre": "Pesto",
+    "categoria": "salsas",
+    "precio": 900,
+    "calorias": 60,
+    "disponible": true,
+    "descripcion": "Pesto de albahaca fresca casero"
+  },
+  {
+    "nombre": "Salsa Teriyaki",
+    "categoria": "salsas",
+    "precio": 600,
+    "calorias": 40,
+    "disponible": true,
+    "descripcion": "Salsa teriyaki dulce japonesa"
+  }
+]

@@ -1,0 +1,536 @@
+[
+  {
+    "nombre": "Hamburguesa Clásica",
+    "precio": 8990,
+    "descripcion": "Hamburguesa con carne de res, lechuga, tomate, cebolla y salsa especial",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-clasica.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "carne de res",
+      "lechuga",
+      "tomate",
+      "cebolla",
+      "pan",
+      "salsa especial"
+    ],
+    "calorias": 520,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Cheeseburger",
+    "precio": 9990,
+    "descripcion": "Hamburguesa clásica con queso cheddar derretido",
+    "categoria": "hamburguesas",
+    "imagen": "/images/cheeseburger.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "carne de res",
+      "queso cheddar",
+      "lechuga",
+      "tomate",
+      "cebolla",
+      "pan",
+      "salsa especial"
+    ],
+    "calorias": 580,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Hamburguesa BBQ",
+    "precio": 11500,
+    "descripcion": "Hamburguesa con salsa BBQ, bacon crujiente y aros de cebolla",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-bbq.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "carne de res",
+      "bacon",
+      "salsa BBQ",
+      "aros de cebolla",
+      "lechuga",
+      "pan"
+    ],
+    "calorias": 650,
+    "tiempo_preparacion": 10
+  },
+  {
+    "nombre": "Hamburguesa Deluxe",
+    "precio": 13990,
+    "descripcion": "Hamburguesa premium con doble carne, queso suizo, aguacate y vegetales frescos",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-deluxe.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "doble carne de res",
+      "queso suizo",
+      "aguacate",
+      "lechuga",
+      "tomate",
+      "pepinillos",
+      "pan brioche"
+    ],
+    "calorias": 750,
+    "tiempo_preparacion": 12
+  },
+  {
+    "nombre": "Hamburguesa Vegetariana",
+    "precio": 10500,
+    "descripcion": "Hamburguesa de proteína vegetal con vegetales frescos y salsa de hierbas",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-vegetariana.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "proteína vegetal",
+      "lechuga",
+      "tomate",
+      "cebolla morada",
+      "aguacate",
+      "salsa de hierbas",
+      "pan integral"
+    ],
+    "calorias": 420,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Hamburguesa de Pollo",
+    "precio": 9500,
+    "descripcion": "Pechuga de pollo grillada con lechuga, tomate y mayonesa de hierbas",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-pollo.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "pechuga de pollo",
+      "lechuga",
+      "tomate",
+      "mayonesa de hierbas",
+      "pan"
+    ],
+    "calorias": 480,
+    "tiempo_preparacion": 10
+  },
+  {
+    "nombre": "Hamburguesa Doble",
+    "precio": 15990,
+    "descripcion": "Dos carnes de res con doble queso, bacon y todos los vegetales",
+    "categoria": "hamburguesas",
+    "imagen": "/images/hamburguesa-doble.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "doble carne de res",
+      "doble queso cheddar",
+      "bacon",
+      "lechuga",
+      "tomate",
+      "cebolla",
+      "pepinillos",
+      "pan"
+    ],
+    "calorias": 920,
+    "tiempo_preparacion": 12
+  },
+  {
+    "nombre": "Papas Fritas Pequeñas",
+    "precio": 3500,
+    "descripcion": "Papas cortadas en bastones, doradas y crujientes",
+    "categoria": "acompañamientos",
+    "imagen": "/images/papas-pequenas.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "papas",
+      "sal",
+      "aceite vegetal"
+    ],
+    "calorias": 230,
+    "tiempo_preparacion": 5
+  },
+  {
+    "nombre": "Papas Fritas Medianas",
+    "precio": 4500,
+    "descripcion": "Porción mediana de papas doradas y crujientes",
+    "categoria": "acompañamientos",
+    "imagen": "/images/papas-medianas.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "papas",
+      "sal",
+      "aceite vegetal"
+    ],
+    "calorias": 350,
+    "tiempo_preparacion": 5
+  },
+  {
+    "nombre": "Papas Fritas Grandes",
+    "precio": 5990,
+    "descripcion": "Porción grande de papas doradas y crujientes",
+    "categoria": "acompañamientos",
+    "imagen": "/images/papas-grandes.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "papas",
+      "sal",
+      "aceite vegetal"
+    ],
+    "calorias": 480,
+    "tiempo_preparacion": 5
+  },
+  {
+    "nombre": "Papas con Cheddar",
+    "precio": 6990,
+    "descripcion": "Papas fritas cubiertas con queso cheddar derretido y bacon bits",
+    "categoria": "acompañamientos",
+    "imagen": "/images/papas-cheddar.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "papas",
+      "queso cheddar",
+      "bacon bits",
+      "cebollín"
+    ],
+    "calorias": 620,
+    "tiempo_preparacion": 7
+  },
+  {
+    "nombre": "Aros de Cebolla",
+    "precio": 4990,
+    "descripcion": "Aros de cebolla empanizados y fritos hasta quedar dorados",
+    "categoria": "acompañamientos",
+    "imagen": "/images/aros-cebolla.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "cebolla",
+      "harina",
+      "pan rallado",
+      "aceite vegetal"
+    ],
+    "calorias": 320,
+    "tiempo_preparacion": 6
+  },
+  {
+    "nombre": "Nuggets de Pollo (6 pcs)",
+    "precio": 7500,
+    "descripcion": "6 piezas de nuggets de pollo crujientes con salsa a elección",
+    "categoria": "acompañamientos",
+    "imagen": "/images/nuggets-6.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "pollo",
+      "pan rallado",
+      "especias",
+      "aceite vegetal"
+    ],
+    "calorias": 380,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Nuggets de Pollo (10 pcs)",
+    "precio": 10990,
+    "descripcion": "10 piezas de nuggets de pollo crujientes con salsa a elección",
+    "categoria": "acompañamientos",
+    "imagen": "/images/nuggets-10.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "pollo",
+      "pan rallado",
+      "especias",
+      "aceite vegetal"
+    ],
+    "calorias": 630,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Coca Cola",
+    "precio": 2500,
+    "descripcion": "Bebida gaseosa clásica, 500ml",
+    "categoria": "bebidas",
+    "imagen": "/images/coca-cola.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "agua carbonatada",
+      "azúcar",
+      "extracto de cola"
+    ],
+    "calorias": 210,
+    "tiempo_preparacion": 1
+  },
+  {
+    "nombre": "Coca Cola Zero",
+    "precio": 2500,
+    "descripcion": "Bebida gaseosa sin azúcar, 500ml",
+    "categoria": "bebidas",
+    "imagen": "/images/coca-cola-zero.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "agua carbonatada",
+      "edulcorantes artificiales",
+      "extracto de cola"
+    ],
+    "calorias": 0,
+    "tiempo_preparacion": 1
+  },
+  {
+    "nombre": "Sprite",
+    "precio": 2500,
+    "descripcion": "Bebida gaseosa de limón, 500ml",
+    "categoria": "bebidas",
+    "imagen": "/images/sprite.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "agua carbonatada",
+      "azúcar",
+      "extracto de limón"
+    ],
+    "calorias": 190,
+    "tiempo_preparacion": 1
+  },
+  {
+    "nombre": "Fanta Naranja",
+    "precio": 2500,
+    "descripcion": "Bebida gaseosa sabor naranja, 500ml",
+    "categoria": "bebidas",
+    "imagen": "/images/fanta-naranja.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "agua carbonatada",
+      "azúcar",
+      "extracto de naranja"
+    ],
+    "calorias": 200,
+    "tiempo_preparacion": 1
+  },
+  {
+    "nombre": "Agua Mineral",
+    "precio": 2000,
+    "descripcion": "Agua mineral natural, 500ml",
+    "categoria": "bebidas",
+    "imagen": "/images/agua-mineral.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "agua mineral"
+    ],
+    "calorias": 0,
+    "tiempo_preparacion": 1
+  },
+  {
+    "nombre": "Jugo de Naranja",
+    "precio": 3000,
+    "descripcion": "Jugo de naranja natural, 400ml",
+    "categoria": "bebidas",
+    "imagen": "/images/jugo-naranja.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "jugo de naranja natural"
+    ],
+    "calorias": 160,
+    "tiempo_preparacion": 2
+  },
+  {
+    "nombre": "Milkshake Vainilla",
+    "precio": 4990,
+    "descripcion": "Batido cremoso de vainilla con crema batida",
+    "categoria": "bebidas",
+    "imagen": "/images/milkshake-vainilla.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de vainilla",
+      "leche",
+      "crema batida",
+      "esencia de vainilla"
+    ],
+    "calorias": 450,
+    "tiempo_preparacion": 3
+  },
+  {
+    "nombre": "Milkshake Chocolate",
+    "precio": 4990,
+    "descripcion": "Batido cremoso de chocolate con crema batida",
+    "categoria": "bebidas",
+    "imagen": "/images/milkshake-chocolate.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de chocolate",
+      "leche",
+      "crema batida",
+      "sirope de chocolate"
+    ],
+    "calorias": 480,
+    "tiempo_preparacion": 3
+  },
+  {
+    "nombre": "Milkshake Fresa",
+    "precio": 4990,
+    "descripcion": "Batido cremoso de fresa con crema batida",
+    "categoria": "bebidas",
+    "imagen": "/images/milkshake-fresa.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de fresa",
+      "leche",
+      "crema batida",
+      "fresa natural"
+    ],
+    "calorias": 420,
+    "tiempo_preparacion": 3
+  },
+  {
+    "nombre": "Ensalada César",
+    "precio": 8500,
+    "descripcion": "Lechuga romana, crutones, queso parmesano y aderezo césar",
+    "categoria": "ensaladas",
+    "imagen": "/images/ensalada-cesar.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "lechuga romana",
+      "crutones",
+      "queso parmesano",
+      "aderezo césar"
+    ],
+    "calorias": 350,
+    "tiempo_preparacion": 5
+  },
+  {
+    "nombre": "Ensalada de Pollo",
+    "precio": 9500,
+    "descripcion": "Ensalada mixta con pechuga de pollo grillada y aderezo ranch",
+    "categoria": "ensaladas",
+    "imagen": "/images/ensalada-pollo.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "lechuga mixta",
+      "pollo grillado",
+      "tomate",
+      "pepino",
+      "aderezo ranch"
+    ],
+    "calorias": 380,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Hot Dog Clásico",
+    "precio": 5990,
+    "descripcion": "Salchicha en pan con mostaza, ketchup y cebolla",
+    "categoria": "hot-dogs",
+    "imagen": "/images/hot-dog-clasico.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "salchicha",
+      "pan para hot dog",
+      "mostaza",
+      "ketchup",
+      "cebolla"
+    ],
+    "calorias": 320,
+    "tiempo_preparacion": 5
+  },
+  {
+    "nombre": "Hot Dog con Chili",
+    "precio": 7500,
+    "descripcion": "Salchicha en pan con chili con carne, queso y cebolla",
+    "categoria": "hot-dogs",
+    "imagen": "/images/hot-dog-chili.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "salchicha",
+      "pan para hot dog",
+      "chili con carne",
+      "queso cheddar",
+      "cebolla"
+    ],
+    "calorias": 450,
+    "tiempo_preparacion": 7
+  },
+  {
+    "nombre": "Sándwich de Pollo",
+    "precio": 8990,
+    "descripcion": "Pechuga de pollo grillada con lechuga, tomate y mayonesa en pan integral",
+    "categoria": "sandwiches",
+    "imagen": "/images/sandwich-pollo.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "pechuga de pollo",
+      "pan integral",
+      "lechuga",
+      "tomate",
+      "mayonesa"
+    ],
+    "calorias": 420,
+    "tiempo_preparacion": 8
+  },
+  {
+    "nombre": "Wrap de Pollo",
+    "precio": 9500,
+    "descripcion": "Tortilla de harina con pollo, lechuga, tomate y aderezo ranch",
+    "categoria": "sandwiches",
+    "imagen": "/images/wrap-pollo.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "tortilla de harina",
+      "pollo grillado",
+      "lechuga",
+      "tomate",
+      "aderezo ranch"
+    ],
+    "calorias": 390,
+    "tiempo_preparacion": 6
+  },
+  {
+    "nombre": "Helado Vainilla",
+    "precio": 3500,
+    "descripcion": "Helado cremoso de vainilla, 2 bolas",
+    "categoria": "postres",
+    "imagen": "/images/helado-vainilla.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de vainilla",
+      "cono o copa"
+    ],
+    "calorias": 220,
+    "tiempo_preparacion": 2
+  },
+  {
+    "nombre": "Helado Chocolate",
+    "precio": 3500,
+    "descripcion": "Helado cremoso de chocolate, 2 bolas",
+    "categoria": "postres",
+    "imagen": "/images/helado-chocolate.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de chocolate",
+      "cono o copa"
+    ],
+    "calorias": 240,
+    "tiempo_preparacion": 2
+  },
+  {
+    "nombre": "Sundae de Caramelo",
+    "precio": 4990,
+    "descripcion": "Helado de vainilla con salsa de caramelo y crema batida",
+    "categoria": "postres",
+    "imagen": "/images/sundae-caramelo.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "helado de vainilla",
+      "salsa de caramelo",
+      "crema batida",
+      "nueces"
+    ],
+    "calorias": 380,
+    "tiempo_preparacion": 3
+  },
+  {
+    "nombre": "Brownie con Helado",
+    "precio": 6500,
+    "descripcion": "Brownie de chocolate caliente con helado de vainilla y salsa de chocolate",
+    "categoria": "postres",
+    "imagen": "/images/brownie-helado.jpg",
+    "disponible": true,
+    "ingredientes": [
+      "brownie de chocolate",
+      "helado de vainilla",
+      "salsa de chocolate",
+      "nueces"
+    ],
+    "calorias": 520,
+    "tiempo_preparacion": 5
+  }
+]
