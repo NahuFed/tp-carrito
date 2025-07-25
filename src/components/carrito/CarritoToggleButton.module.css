@@ -1,0 +1,116 @@
+/* Botón toggle del carrito */
+.toggleButton {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 60px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px 0 0 30px; /* Forma de bala/solapa */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding-left: 10px; /* Más espacio a la izquierda */
+}
+
+.toggleButton:hover {
+  background: #0056b3;
+  transform: translateY(-50%) translateX(-5px);
+}
+
+.toggleButtonOpen {
+  right: calc(380px + 2rem); /* Ancho del sidebar + padding del layout */
+}
+
+.toggleIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  line-height: 1;
+  gap: 3px;
+}
+
+.carritoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carritoIcon svg {
+  width: 20px;
+  height: 16px;
+}
+
+.arrowIcon {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: bold;
+  display: block;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.itemCount {
+  position: absolute;
+  top: -5px;
+  right: 5px; /* Ajustado para la nueva forma */
+  background: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .toggleButtonOpen {
+    right: calc(320px + 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .toggleButton {
+    width: 60px;
+    height: 50px;
+    font-size: 1.2rem;
+    padding-left: 8px;
+  }
+  
+  .toggleButtonOpen {
+    right: calc(280px + 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    bottom: 1rem;
+    top: auto;
+    right: 0;
+    transform: none;
+    width: 65px;
+    height: 55px;
+    border-radius: 30px 0 0 30px;
+  }
+  
+  .toggleButton:hover {
+    transform: translateX(-5px);
+  }
+  
+  .toggleButtonOpen {
+    right: 0;
+  }
+}

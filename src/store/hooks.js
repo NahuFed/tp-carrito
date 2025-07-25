@@ -3,14 +3,18 @@ import {
   agregarAlCarrito as agregarAlCarritoAction,
   actualizarCantidad as actualizarCantidadAction,
   eliminarDelCarrito as eliminarDelCarritoAction,
-  limpiarCarrito as limpiarCarritoAction
+  limpiarCarrito as limpiarCarritoAction,
+  toggleCarrito as toggleCarritoAction,
+  abrirCarrito as abrirCarritoAction,
+  cerrarCarrito as cerrarCarritoAction
 } from './slices/carritoSlice'
 import {
   selectCarritoItems,
   selectCarritoSubtotal,
   selectCarritoCaloriasTotales,
   selectCarritoCantidadTotal,
-  selectCarritoVacio
+  selectCarritoVacio,
+  selectCarritoAbierto
 } from './selectors'
 
 // Hook personalizado para usar el estado del carrito
@@ -21,9 +25,12 @@ export const useCarrito = () => {
   const caloriasTotales = useSelector(selectCarritoCaloriasTotales)
   const cantidadTotal = useSelector(selectCarritoCantidadTotal)
   const carritoVacio = useSelector(selectCarritoVacio)
+  const carritoAbierto = useSelector(selectCarritoAbierto)
 
   const agregarAlCarrito = (producto) => {
     dispatch(agregarAlCarritoAction(producto))
+    // Abrir carrito automáticamente al agregar un producto
+    dispatch(abrirCarritoAction())
   }
 
   const actualizarCantidad = (id, nuevaCantidad) => {
@@ -38,6 +45,18 @@ export const useCarrito = () => {
     dispatch(limpiarCarritoAction())
   }
 
+  const toggleCarrito = () => {
+    dispatch(toggleCarritoAction())
+  }
+
+  const abrirCarrito = () => {
+    dispatch(abrirCarritoAction())
+  }
+
+  const cerrarCarrito = () => {
+    dispatch(cerrarCarritoAction())
+  }
+
   const calcularSubtotal = () => subtotal
   const calcularCaloriasTotales = () => caloriasTotales
 
@@ -47,10 +66,14 @@ export const useCarrito = () => {
     caloriasTotales,
     cantidadTotal,
     carritoVacio,
+    carritoAbierto,
     agregarAlCarrito,
     actualizarCantidad,
     eliminarDelCarrito,
     limpiarCarrito,
+    toggleCarrito,
+    abrirCarrito,
+    cerrarCarrito,
     calcularSubtotal,
     calcularCaloriasTotales
   }

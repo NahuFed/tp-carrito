@@ -29,6 +29,11 @@ export const selectCarritoVacio = createSelector(
   (items) => items.length === 0
 )
 
+export const selectCarritoAbierto = createSelector(
+  [selectCarritoState],
+  (carrito) => carrito.carritoAbierto
+)
+
 // Selector para encontrar un item específico por ID
 export const selectCarritoItemPorId = createSelector(
   [selectCarritoItems, (state, id) => id],

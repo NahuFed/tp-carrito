@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   items: [],
   subtotal: 0,
-  caloriasTotales: 0
+  caloriasTotales: 0,
+  carritoAbierto: false
 }
 
 const carritoSlice = createSlice({
@@ -61,6 +62,18 @@ const carritoSlice = createSlice({
     calcularTotales: (state) => {
       state.subtotal = state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0)
       state.caloriasTotales = state.items.reduce((total, item) => total + (item.calorias * item.cantidad), 0)
+    },
+    
+    toggleCarrito: (state) => {
+      state.carritoAbierto = !state.carritoAbierto
+    },
+    
+    abrirCarrito: (state) => {
+      state.carritoAbierto = true
+    },
+    
+    cerrarCarrito: (state) => {
+      state.carritoAbierto = false
     }
   }
 })
@@ -70,7 +83,10 @@ export const {
   actualizarCantidad, 
   eliminarDelCarrito, 
   limpiarCarrito, 
-  calcularTotales 
+  calcularTotales,
+  toggleCarrito,
+  abrirCarrito,
+  cerrarCarrito
 } = carritoSlice.actions
 
 export default carritoSlice.reducer

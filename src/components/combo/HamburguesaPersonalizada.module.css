@@ -287,10 +287,12 @@
 
 /* Botón flotante */
 .floatingButton {
-  position: sticky;
+  position: fixed;
   bottom: 2rem;
-  margin-top: 2rem;
-  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500; /* Aumentado para estar por encima de otros elementos pero por debajo del toggle del carrito */
+  margin-top: 0; /* Removido porque position fixed no necesita margin */
 }
 
 /* Responsive */
@@ -447,5 +449,21 @@
     width: 32px;
     height: 32px;
     font-size: 16px;
+  }
+}
+
+/* Media queries para el botón flotante */
+@media (max-width: 768px) {
+  .floatingButton {
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    width: calc(100% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingButton {
+    bottom: 5rem; /* Más espacio en móviles para evitar conflictos con el botón del carrito */
   }
 }
