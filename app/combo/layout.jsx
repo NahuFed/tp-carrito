@@ -2,8 +2,8 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "@/src/store";
-import styles from "./ProductoCombo.module.css";
-import Carrito from "@/src/components/Carrito";
+import styles from "../../src/components/combo/ProductoCombo.module.css";
+import Carrito from "@/src/components/carrito/Carrito";
 
 export default function ComboLayout({ children }) {
   return (
