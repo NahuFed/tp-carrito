@@ -31,6 +31,66 @@
   height: fit-content;
 }
 
+/* Nuevo layout con carrito flotante */
+.pageLayoutWithCarrito {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 1rem;
+}
+
+.mainColumnWithCarrito {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: none; /* Usa todo el ancho disponible */
+}
+
+/* Layout adaptativo para carrito colapsable */
+.pageLayoutAdaptive {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 1rem;
+  gap: 0;
+  position: relative;
+}
+
+.mainColumnAdaptive {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  overflow: visible; /* Cambiado para permitir que el botón flotante sea visible */
+}
+
+.carritoWrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.carritoWrapperOpen {
+  width: 380px;
+  opacity: 1;
+}
+
+.carritoWrapperClosed {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.carritoOpen .mainColumnAdaptive {
+  margin-right: 1rem;
+}
+
+.carritoClosed .mainColumnAdaptive {
+  margin-right: 0;
+}
+
 .contentArea {
   flex: 1;
 }
@@ -372,12 +432,25 @@
   .mainContent {
     max-width: 100%;
   }
+  
+  /* Nuevos estilos para layout con carrito flotante */
+  .pageLayoutWithCarrito {
+    padding: 0.5rem;
+  }
+  
+  .mainColumnWithCarrito {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .pageLayout {
     padding: 0.5rem;
     gap: 1rem;
+  }
+  
+  .pageLayoutWithCarrito {
+    padding: 0.5rem;
   }
   
   .mainColumn {

@@ -12,7 +12,9 @@ const Carrito = () => {
     actualizarCantidad,
     eliminarDelCarrito,
     limpiarCarrito,
-    carritoVacio
+    carritoVacio,
+    carritoAbierto,
+    toggleCarrito
   } = useCarrito()
 
   const confirmarPedido = async () => {
@@ -81,7 +83,7 @@ const Carrito = () => {
   }
 
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${carritoAbierto ? styles.sidebarOpen : styles.sidebarClosed}`}>
       <div className={styles.carritoHeader}>
         <h2 className={styles.carritoTitle}>🛒 Tu Carrito</h2>
         {!carritoVacio && (
@@ -94,96 +96,96 @@ const Carrito = () => {
         )}
       </div>
 
-      <div className={styles.carritoContent}>
-        {carritoVacio ? (
-          <div className={styles.carritoVacio}>
-            <p>Tu carrito está vacío</p>
-            <span>¡Agrega algunos productos!</span>
-          </div>
-        ) : (
-          <>
-            <div className={styles.carritoItems}>
-              {items.map(item => (
-                <div key={item._id} className={styles.carritoItem}>
-                  <div className={styles.itemInfo}>
-                    <h4 className={styles.itemNombre}>{item.nombre}</h4>
-                    
-                    {/* Mostrar descripción detallada para hamburguesas personalizadas */}
-                    {item.esPersonalizada && item.descripcion && (
-                      <div className={styles.itemDescripcion}>
-                        {item.descripcion}
+        <div className={styles.carritoContent}>
+          {carritoVacio ? (
+            <div className={styles.carritoVacio}>
+              <p>Tu carrito está vacío</p>
+              <span>¡Agrega algunos productos!</span>
+            </div>
+          ) : (
+            <>
+              <div className={styles.carritoItems}>
+                {items.map(item => (
+                  <div key={item._id} className={styles.carritoItem}>
+                    <div className={styles.itemInfo}>
+                      <h4 className={styles.itemNombre}>{item.nombre}</h4>
+                      
+                      {/* Mostrar descripción detallada para hamburguesas personalizadas */}
+                      {item.esPersonalizada && item.descripcion && (
+                        <div className={styles.itemDescripcion}>
+                          {item.descripcion}
+                        </div>
+                      )}
+                      
+                      <div className={styles.itemDetalles}>
+                        <span className={styles.itemPrecio}>
+                          ${item.precio.toLocaleString()} c/u
+                        </span>
+                        <span className={styles.itemCalorias}>
+                          {item.calorias} cal
+                        </span>
                       </div>
-                    )}
-                    
-                    <div className={styles.itemDetalles}>
-                      <span className={styles.itemPrecio}>
-                        ${item.precio.toLocaleString()} c/u
-                      </span>
-                      <span className={styles.itemCalorias}>
-                        {item.calorias} cal
-                      </span>
                     </div>
-                  </div>
 
-                  <div className={styles.itemControles}>
-                    <div className={styles.cantidadControles}>
+                    <div className={styles.itemControles}>
+                      <div className={styles.cantidadControles}>
+                        <button 
+                          className={styles.cantidadBtn}
+                          onClick={() => actualizarCantidad(item._id, item.cantidad - 1)}
+                        >
+                          -
+                        </button>
+                        <span className={styles.cantidad}>{item.cantidad}</span>
+                        <button 
+                          className={styles.cantidadBtn}
+                          onClick={() => actualizarCantidad(item._id, item.cantidad + 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                      
+                      <div className={styles.itemSubtotal}>
+                        ${(item.precio * item.cantidad).toLocaleString()}
+                      </div>
+                      
                       <button 
-                        className={styles.cantidadBtn}
-                        onClick={() => actualizarCantidad(item._id, item.cantidad - 1)}
+                        className={styles.eliminarBtn}
+                        onClick={() => eliminarDelCarrito(item._id)}
                       >
-                        -
-                      </button>
-                      <span className={styles.cantidad}>{item.cantidad}</span>
-                      <button 
-                        className={styles.cantidadBtn}
-                        onClick={() => actualizarCantidad(item._id, item.cantidad + 1)}
-                      >
-                        +
+                        🗑️
                       </button>
                     </div>
-                    
-                    <div className={styles.itemSubtotal}>
-                      ${(item.precio * item.cantidad).toLocaleString()}
-                    </div>
-                    
-                    <button 
-                      className={styles.eliminarBtn}
-                      onClick={() => eliminarDelCarrito(item._id)}
-                    >
-                      🗑️
-                    </button>
                   </div>
+                ))}
+              </div>
+
+              <div className={styles.carritoResumen}>
+                <div className={styles.resumenLinea}>
+                  <span>Total de calorías:</span>
+                  <span className={styles.calorias}>{caloriasTotales} cal</span>
                 </div>
-              ))}
-            </div>
+                
+                <div className={styles.resumenLinea}>
+                  <span>Items:</span>
+                  <span>{items.reduce((total, item) => total + item.cantidad, 0)}</span>
+                </div>
+                
+                <div className={styles.resumenTotal}>
+                  <span>Subtotal:</span>
+                  <span className={styles.total}>${subtotal.toLocaleString()}</span>
+                </div>
+              </div>
 
-            <div className={styles.carritoResumen}>
-              <div className={styles.resumenLinea}>
-                <span>Total de calorías:</span>
-                <span className={styles.calorias}>{caloriasTotales} cal</span>
-              </div>
-              
-              <div className={styles.resumenLinea}>
-                <span>Items:</span>
-                <span>{items.reduce((total, item) => total + item.cantidad, 0)}</span>
-              </div>
-              
-              <div className={styles.resumenTotal}>
-                <span>Subtotal:</span>
-                <span className={styles.total}>${subtotal.toLocaleString()}</span>
-              </div>
-            </div>
-
-            <button 
-              className={styles.confirmarButton}
-              onClick={confirmarPedido}
-            >
-              Confirmar Pedido
-            </button>
-          </>
-        )}
+              <button 
+                className={styles.confirmarButton}
+                onClick={confirmarPedido}
+              >
+                Confirmar Pedido
+              </button>
+            </>
+          )}
+        </div>
       </div>
-    </div>
   )
 }
 

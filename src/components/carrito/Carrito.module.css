@@ -1,13 +1,28 @@
 /* Sidebar del carrito */
 .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 380px;
   background: white;
   border-left: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 0;
   height: 100vh;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.sidebarOpen {
+  opacity: 1;
+  transform: none;
+}
+
+.sidebarClosed {
+  width: 0;
+  opacity: 0;
+  transform: translateX(100%);
   overflow: hidden;
 }
 
@@ -251,11 +266,11 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-left: none;
-    border-top: 1px solid #e5e7eb;
+    width: 320px;
+  }
+  
+  .toggleButtonOpen {
+    right: 320px;
   }
   
   .carritoItems {
@@ -265,7 +280,17 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    margin-top: 1rem;
+    width: 280px;
+  }
+  
+  .toggleButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .toggleButtonOpen {
+    right: 280px;
   }
   
   .carritoHeader {
@@ -296,5 +321,31 @@
   
   .eliminarBtn {
     order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    right: 0;
+  }
+  
+  .toggleButton {
+    display: none; /* En móviles muy pequeños, siempre mostrar carrito */
+  }
+  
+  .sidebarClosed {
+    transform: translateY(100%);
+  }
+  
+  .sidebarOpen {
+    transform: translateY(0);
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    height: 60vh;
+    border-radius: 1rem 1rem 0 0;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
   }
 }
