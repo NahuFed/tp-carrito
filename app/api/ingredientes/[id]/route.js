@@ -1,5 +1,5 @@
-import { connectDB } from "@/lib/mongodb"
-import Ingrediente from "@/models/Ingrediente"
+import { connectDB } from "@/src/lib/mongodb"
+import Ingrediente from "@/src/models/Ingrediente"
 import { NextResponse } from "next/server"
 
 // GET: Obtener un ingrediente específico por ID

@@ -1,5 +1,5 @@
-import { connectDB } from "@/lib/mongodb"
-import Pedido from "@/models/Pedido"
+import { connectDB } from "@/src/lib/mongodb"
+import Pedido from "@/src/models/Pedido"
 import { NextResponse } from "next/server"
 
 // GET: Obtener un pedido específico por ID
